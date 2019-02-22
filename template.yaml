@@ -9,7 +9,7 @@ Resources:
       Description: !Sub
         - Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName} Function ${ResourceName}
         - ResourceName: getWelcomePage
-      CodeUri: src/getWelcomePage
+      CodeUri: src/getWelcomePage/src
       Handler: index.handler
       Runtime: nodejs8.10
       MemorySize: 3008
