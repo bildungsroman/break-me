@@ -52,7 +52,7 @@ Resources:
       Description: !Sub
         - Stack ${StackTagName} Environment ${EnvironmentTagName} Function ${ResourceName}
         - ResourceName: brokenFunction
-      CodeUri: src/brokenFunction/src
+      CodeUri: src/brokenFunction
       Handler: index.handler
       Runtime: nodejs8.10
       MemorySize: 3008
