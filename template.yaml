@@ -2,14 +2,14 @@ AWSTemplateFormatVersion: 2010-09-09
 Transform: AWS::Serverless-2016-10-31
 Description: Stackery Serverless API Example Stack
 Resources:
-  Function:
+  iWillDisappear:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: !Sub ${AWS::StackName}-Function
+      FunctionName: !Sub ${AWS::StackName}-iWillDisappear
       Description: !Sub
         - Stack ${StackTagName} Environment ${EnvironmentTagName} Function ${ResourceName}
-        - ResourceName: Function
-      CodeUri: src
+        - ResourceName: iWillDisappear
+      CodeUri: src/iWillDisappear/src
       Handler: index.handler
       Runtime: nodejs8.10
       MemorySize: 3008
@@ -17,6 +17,8 @@ Resources:
       Tracing: Active
       Policies:
         - AWSXrayWriteOnlyAccess
+    Metadata:
+      StackeryName: iWillDisappear
 Parameters:
   StackTagName:
     Type: String
