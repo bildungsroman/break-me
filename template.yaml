@@ -84,7 +84,7 @@ Resources:
       Description: !Sub
         - Stack ${StackTagName} Environment ${EnvironmentTagName} Function ${ResourceName}
         - ResourceName: Function2
-      CodeUri: src/Function2/src
+      CodeUri: src/Function2
       Handler: index.handler
       Runtime: nodejs8.10
       MemorySize: 3008
