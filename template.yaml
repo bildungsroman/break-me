@@ -52,7 +52,7 @@ Resources:
       Description: !Sub
         - Stack ${StackTagName} Environment ${EnvironmentTagName} Function ${ResourceName}
         - ResourceName: iWillDisappear
-      CodeUri: src/iWillDisappear/src
+      CodeUri: src/iWillDisappear
       Handler: index.handler
       Runtime: nodejs8.10
       MemorySize: 3008
