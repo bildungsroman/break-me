@@ -31,7 +31,7 @@ Resources:
     Properties:
       Name: !Sub
         - ${ResourceName} From Stackery Stack ${StackeryStackTagName} Environment ${StackeryEnvironmentTagName}
-        - ResourceName: apiFE76C470
+        - ResourceName: service
       StageName: !Ref StackeryEnvironmentAPIGatewayStageName
       DefinitionBody:
         swagger: '2.0'
@@ -51,7 +51,7 @@ Resources:
       FunctionName: !Sub ${AWS::StackName}-iWillDisappear
       Description: !Sub
         - Stack ${StackTagName} Environment ${EnvironmentTagName} Function ${ResourceName}
-        - ResourceName: iWillDisappear
+        - ResourceName: service
       CodeUri: src/iWillDisappear
       Handler: index.handler
       Runtime: nodejs8.10
@@ -62,6 +62,21 @@ Resources:
         - AWSXrayWriteOnlyAccess
     Metadata:
       StackeryName: iWillDisappear
+  Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${AWS::StackName}-Function
+      Description: !Sub
+        - Stack ${StackTagName} Environment ${EnvironmentTagName} Function ${ResourceName}
+        - ResourceName: Function
+      CodeUri: src/Function
+      Handler: index.handler
+      Runtime: nodejs8.10
+      MemorySize: 3008
+      Timeout: 30
+      Tracing: Active
+      Policies:
+        - AWSXrayWriteOnlyAccess
 Parameters:
   StackeryStackTagName:
     Type: String
