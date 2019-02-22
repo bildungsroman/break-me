@@ -68,7 +68,7 @@ Resources:
       FunctionName: !Sub ${AWS::StackName}-Function
       Description: !Sub
         - Stack ${StackTagName} Environment ${EnvironmentTagName} Function ${ResourceName}
-        - ResourceName: Function
+        - ResourceName: service
       CodeUri: src/Function
       Handler: index.handler
       Runtime: nodejs8.10
