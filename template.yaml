@@ -18,8 +18,7 @@ Resources:
       Policies:
         - AWSXrayWriteOnlyAccess
       Environment:
-        Variables:
-          BROKEN_VALUE: !Ref EnvConfigbrokenValueAsString
+        Variables: {}
 Parameters:
   StackTagName:
     Type: String
@@ -27,9 +26,3 @@ Parameters:
   EnvironmentTagName:
     Type: String
     Description: Environment Name (injected by Stackery at deployment time)
-  EnvConfigbrokenValueAsString:
-    Type: AWS::SSM::Parameter::Value<String>
-    Default: /<EnvironmentName>/brokenValue
-Metadata:
-  EnvConfigParameters:
-    EnvConfigbrokenValueAsString: brokenValue
