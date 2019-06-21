@@ -19,6 +19,21 @@ Resources:
         - AWSXrayWriteOnlyAccess
       Environment:
         Variables: {}
+  FunctionWTF:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub ${AWS::StackName}-FunctionWTF
+      Description: !Sub
+        - Stack ${StackTagName} Environment ${EnvironmentTagName} Function ${ResourceName}
+        - ResourceName: FunctionWTF
+      CodeUri: src/FunctionWTF
+      Handler: index.handler
+      Runtime: nodejs10.x
+      MemorySize: 3008
+      Timeout: 30
+      Tracing: Active
+      Policies:
+        - AWSXrayWriteOnlyAccess
 Parameters:
   StackTagName:
     Type: String
