@@ -56,8 +56,8 @@ Resources:
         - Stack ${StackTagName} Environment ${EnvironmentTagName} Function ${ResourceName}
         - ResourceName: FunctionAAAAAA
       CodeUri: src/Function2
-      Handler: index.handler
-      Runtime: nodejs10.x
+      Handler: handler.handler
+      Runtime: python3.7
       MemorySize: 3008
       Timeout: 30
       Tracing: Active
